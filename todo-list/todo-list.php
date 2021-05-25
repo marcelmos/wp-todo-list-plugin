@@ -141,12 +141,12 @@ class ToDo_List {
                     <div class="justify-content">
                         <label>
                             <p class="label-text">Task Deadline:</p>
-                            <input type="date" required name="edit-task-deadline">
+                            <input type="date" name="edit-task-deadline">
                         </label>
 
                         <label>
                             <p class="label-text">Priority level:</p>
-                            <select required name="edit-task-priority">
+                            <select name="edit-task-priority">
                                 <option>None</option>
                                 <option>Low</option>
                                 <option>Medium</option>
