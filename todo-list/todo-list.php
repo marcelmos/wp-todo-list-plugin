@@ -2,7 +2,7 @@
 /**
 * Plugin Name: ToDo List
 * Description: ToDo List for your WordPress admin panel. Plan your future posts and actions on your page. You can create new task, edit task, set as done, and remove.
-* Version: 1.0
+* Version: 1.1
 * Author: Marcel Moś
 * Author URI: http://defaultweb.epizy.com
 */
@@ -71,6 +71,12 @@ class ToDo_List {
                                         <p><b>Deadline:</b><br> "
                                         .(($task->task_deadline == "0000-00-00") ? "Not set" : $task->task_deadline)."</p>
                                     </div>
+                                    <div class='contributors'>
+                                        <span class='dashicons dashicons-buddicons-buddypress-logo'></span>
+                                        <span class='contributor-list'>
+                                            $task->task_contributors
+                                        </span>
+                                    </div>
                                     <form method='post' action=''>
                                         ".(($task->task_status == 0) ? "<button class='button button-primary' name='action_btn' value='$task->id'>Set As Done</button>" : "<button class='button' name='action_btn' value='$task->id'>Set ToDo</button>")."
                                     </form>
@@ -103,20 +109,37 @@ class ToDo_List {
                         <input type="text" class="task-name" name="task-name" required placeholder="Plan for today is...">
                     </label><br>
 
+
                     <div class="justify-content">
-                        <label>
-                            <p class="label-text">Task Deadline:</p>
-                            <input type="date" name="task-deadline">
-                        </label>
+
+                        <div>
+                            <label>
+                                <p class="label-text">Task Deadline:</p>
+                                <input type="date" name="task-deadline">
+                            </label>
+
+                            <label>
+                                <p class="label-text">Priority level:</p>
+                                <select name="task-priority">
+                                    <option>None</option>
+                                    <option>Low</option>
+                                    <option>Medium</option>
+                                    <option>High</option>
+                                    <option>Important</option>
+                                </select>
+                            </label>
+                        </div>
 
                         <label>
-                            <p class="label-text">Priority level:</p>
-                            <select name="task-priority">
-                                <option>None</option>
-                                <option>Low</option>
-                                <option>Medium</option>
-                                <option>High</option>
-                                <option>Important</option>
+                            <p class="label-text">Task contributors:</p>
+                            <select name="task-contributors[]" required multiple>
+                                <option value='Anyone'>Anyone</option>
+                                <?php
+                                    $users = get_users();
+                                    foreach($users as $user){
+                                        echo "<option value='$user->display_name'>$user->display_name</option>";
+                                    }
+                                ?>
                             </select>
                         </label>
                     </div>
@@ -135,23 +158,38 @@ class ToDo_List {
                     <input type="hidden" id="task-id" name="task-id" value="" />
                     <label>
                         <p class="label-text">Task Name:</p>
-                        <input type="text" class="task-name" name="edit-task-name" max-length="255" required placeholder="New task name...">
+                        <input type="text" class="task-name" name="task-name" max-length="255" required placeholder="New task name...">
                     </label><br>
 
                     <div class="justify-content">
-                        <label>
-                            <p class="label-text">Task Deadline:</p>
-                            <input type="date" name="edit-task-deadline">
-                        </label>
+                        <div>
+                            <label>
+                                <p class="label-text">Task Deadline:</p>
+                                <input type="date" name="task-deadline">
+                            </label>
+
+                            <label>
+                                <p class="label-text">Priority level:</p>
+                                <select name="task-priority">
+                                    <option>None</option>
+                                    <option>Low</option>
+                                    <option>Medium</option>
+                                    <option>High</option>
+                                    <option>Important</option>
+                                </select>
+                            </label>
+                        </div>
 
                         <label>
-                            <p class="label-text">Priority level:</p>
-                            <select name="edit-task-priority">
-                                <option>None</option>
-                                <option>Low</option>
-                                <option>Medium</option>
-                                <option>High</option>
-                                <option>Important</option>
+                            <p class="label-text">Task contributors:</p>
+                            <select name="task-contributors[]" required multiple>
+                                <option value='Anyone'>Anyone</option>
+                            <?php
+                                $users = get_users();
+                                foreach($users as $user){
+                                    echo "<option value='$user->display_name'>$user->display_name</option>";
+                                }
+                            ?>
                             </select>
                         </label>
                     </div>

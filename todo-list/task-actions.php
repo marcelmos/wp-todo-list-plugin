@@ -14,6 +14,7 @@ class Task_Actions{
                 `task_deadline` DATE NOT NULL ,
                 `task_priority` VARCHAR(20) NOT NULL ,
                 `task_status` BOOLEAN NOT NULL,
+                `task_contributors` TEXT NOT NULL ,
                 PRIMARY KEY  (`id`)) ENGINE = InnoDB;";
 
             require_once( ABSPATH . 'wp-admin/includes/upgrade.php');
@@ -35,6 +36,9 @@ class Task_Actions{
         //    $task_created = date("Y-m-d");
            $task_deadline = $_POST['task-deadline'];
            $task_priority = $_POST['task-priority'];
+           $task_contributors_arr = $_POST['task-contributors'];
+
+           $contributors_str = implode (", ", $task_contributors_arr);
 
             $wpdb->insert(
                 $wpdb->prefix."todo",
@@ -44,6 +48,7 @@ class Task_Actions{
                     'task_deadline' => $task_deadline,
                     'task_priority' => $task_priority,
                     'task_status' => 0,
+                    'task_contributors' => $contributors_str,
                 )
             );
         }
@@ -75,9 +80,12 @@ class Task_Actions{
         global  $wpdb;
 
         $task_id = $_POST['task-id'];
-        $task_name = $_POST['edit-task-name'];
-        $task_deadline = $_POST['edit-task-deadline'];
-        $task_priority = $_POST['edit-task-priority'];
+        $task_name = $_POST['task-name'];
+        $task_deadline = $_POST['task-deadline'];
+        $task_priority = $_POST['task-priority'];
+        $task_contributors_arr = $_POST['task-contributors'];
+
+        $contributors_str = implode (", ", $task_contributors_arr);
 
         $wpdb->update(
             $wpdb->prefix."todo",
@@ -85,6 +93,7 @@ class Task_Actions{
                 'task_name' => $task_name,
                 'task_deadline' => $task_deadline,
                 'task_priority' => $task_priority,
+                'task_contributors' => $contributors_str
             ),
             array('id' => $task_id)
         );

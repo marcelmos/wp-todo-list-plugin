@@ -39,6 +39,23 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
+    transition: all ease-in-out .1s;
+    // Adding stroke to contrast with light background
+    text-shadow:
+   -1px -1px 0 #5f5f5f,
+    1px -1px 0 #5f5f5f,
+    -1px 1px 0 #5f5f5f,
+     1px 1px 0 #5f5f5f;
+
+    &:hover{
+        transform: scale(125%);
+        // Adding stroke to contrast with light background
+        text-shadow:
+        -1px -1px 0 #5f5f5f,
+        1px -1px 0 #5f5f5f,
+        -1px 1px 0 #5f5f5f,
+        1px 1px 0 #5f5f5f;
+    }
 }
 
 .task-list{
@@ -99,6 +116,11 @@
         justify-content: space-between;
         text-transform: uppercase;
         font-weight: 700;
+        text-shadow:
+        -1px -1px 0 #5f5f5f,
+        1px -1px 0 #5f5f5f,
+        -1px 1px 0 #5f5f5f,
+        1px 1px 0 #5f5f5f;
 
         &.priority-none{
             background-color: #A7D7FF;
@@ -165,4 +187,40 @@
 
         }
     }
+}
+
+.contributors{
+    position: relative;
+
+    .dashicons{
+        width: 32px;
+        font-size: 32px;
+        opacity: .5;
+        transition: all ease-in .2s;
+        &:hover{
+            opacity: 1;
+        }
+    }
+
+    .contributor-list{
+        visibility: hidden;
+        position: absolute;
+        top: 40px;
+        left: -15px;
+        background-color: #444444;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        padding: 5px 10px;
+        border-radius: 10px;
+        color: #fff;
+        font-weight: 600;
+        transition: all ease-in .3s;
+        opacity: 0;
+        z-index: 100;
+        white-space: normal;
+    }
+    &:hover .contributor-list{
+        visibility: visible;
+        opacity: 1;
+    }
+
 }
