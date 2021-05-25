@@ -7,7 +7,7 @@ It's my first WP plugin which I created. I hope to have time and ideas for updat
 If not reqruitment task probably I've never would to start to create my own plugin, it was really fun to create it and to  learn some new stuff too! :smiley:
 
 ## :zap: Installation
-Download project and add `todo-list` folder to your wordpress page to following localization: <br>
+Download project and add it to your wordpress page to following localization: <br>
 `/wp-content/plugins`
 
 After that go to your WordPress admin panel and in `Plugins` section, then just activate plugin called `ToDo List`.<br>
@@ -19,7 +19,7 @@ Roles like admin, author, contributor and editor can had access to plugin tab.
 
 Adding new task:
 - Press big button "New Task"
-- Type task name (Required), set deadline date, select task priority level
+- Type task name (required), set deadline date, select task priority level and chose who would to do this task (required)
 - Press "Add Task" button
 
 Edit task:
@@ -35,6 +35,8 @@ Delete task:
 Set task as done:
 - Press "Set as Done" button on task.
 > :memo: NOTE: You can "undone" task by pressing "Set ToDo" button.
+
+Hovering over icon on bottom left on task show you all contributers which are set for task.
 
 ## Author
 - Marcel Moś - Developer
