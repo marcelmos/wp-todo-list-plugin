@@ -7,7 +7,7 @@ It's my first WP plugin which I created. I hope to have time and ideas for updat
 If not reqruitment task probably I've never would to start to create my own plugin, it was really fun to create it and to  learn some new stuff too! :smiley:
 
 ## :zap: Installation
-Download project and add it to your wordpress page to following localization: <br>
+Download project and add `todo-list` folder to your wordpress page to following localization: <br>
 `/wp-content/plugins`
 
 After that go to your WordPress admin panel and in `Plugins` section, then just activate plugin called `ToDo List`.<br>
