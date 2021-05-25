@@ -1,0 +1,199 @@
+.modal {
+  background-color: #eeeeee;
+  width: 350px;
+  padding: 15px 25px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: none;
+}
+
+.modal form .justify-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.modal form .task-name {
+  width: 100%;
+}
+
+.modal form .button {
+  margin: 50px 10px 0 10px;
+}
+
+.modal form .form-btn {
+  text-align: right;
+}
+
+.modal form .label-text {
+  margin-bottom: 0;
+}
+
+.btn-task {
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.task-list {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.task {
+  height: auto;
+  background-color: #fff;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  margin: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+  .task {
+    width: 90vw !important;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .task {
+    min-width: 300px;
+    max-width: 400px;
+  }
+}
+
+.task.task-done {
+  opacity: .45;
+}
+
+.task.task-done .button, .task.task-done .btn-task {
+  opacity: 1;
+}
+
+.task.add-new {
+  width: 200px;
+  border: none;
+}
+
+.task .task-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+}
+
+.task .task-top {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  text-align: right;
+  background-color: #c7c7c7;
+  -webkit-box-shadow: 0 5px 10px rgba(199, 199, 199, 0.2);
+          box-shadow: 0 5px 10px rgba(199, 199, 199, 0.2);
+  border-radius: 15px 15px 0 0;
+  padding: 5px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #fff;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.task .task-top.priority-none {
+  background-color: #A7D7FF;
+  -webkit-box-shadow: 0 5px 10px rgba(167, 215, 255, 0.3);
+          box-shadow: 0 5px 10px rgba(167, 215, 255, 0.3);
+}
+
+.task .task-top.priority-low {
+  background-color: #44A2EE;
+  -webkit-box-shadow: 0 5px 10px rgba(68, 161, 238, 0.3);
+          box-shadow: 0 5px 10px rgba(68, 161, 238, 0.3);
+}
+
+.task .task-top.priority-medium {
+  background-color: #824CDE;
+  -webkit-box-shadow: 0 5px 10px rgba(130, 76, 222, 0.3);
+          box-shadow: 0 5px 10px rgba(130, 76, 222, 0.3);
+}
+
+.task .task-top.priority-high {
+  background-color: #EEBF44;
+  -webkit-box-shadow: 0 5px 10px rgba(238, 190, 68, 0.3);
+          box-shadow: 0 5px 10px rgba(238, 190, 68, 0.3);
+}
+
+.task .task-top.priority-important {
+  background-color: #FF4737;
+  -webkit-box-shadow: 0 5px 10px rgba(255, 72, 55, 0.3);
+          box-shadow: 0 5px 10px rgba(255, 72, 55, 0.3);
+}
+
+.task .task-content {
+  padding: 0 20px 10px 20px;
+  color: #000;
+}
+
+.task .task-content .task-name {
+  font-size: 16px;
+  word-wrap: break-word;
+}
+
+.task .task-content .task-date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.task .task-content .button {
+  float: right;
+  margin-bottom: 10px;
+}
+
+.task .task-add {
+  text-align: center;
+  position: relative;
+}
+
+.task .task-add h2, .task .task-add h3 {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.task .task-add h2 {
+  line-height: 60px;
+  font-size: 100px;
+  margin: 0;
+}
+
+.task .task-add h3 {
+  font-size: 32px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  white-space: nowrap;
+}
+/*# sourceMappingURL=style.css.map */
